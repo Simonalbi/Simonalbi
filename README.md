@@ -14,7 +14,7 @@
   </p>
 
   <p>
-    Software Engineer fascinated by everything related to programming, development, and the endless possibilities offered by digital innovation. Over time, I've had the opportunity to learn a lot, but I know there's always something new and exciting to discover. That's why, driven by curiosity and the desire to improve, I love challenging myself, growing, and continuously expanding my skills.
+    As a Software Engineer, I am driven by a simple but powerful belief: <b>developers have the tools to genuinely change the world</b>. There's something magical about the fact that if you can imagine it, you can build it. I'm fascinated by everything related to programming, development, and the endless possibilities offered by digital innovation. Over time, I've had the opportunity to learn a lot, but I know there's always something new and exciting to discover. That's why, driven by curiosity and the desire to improve, I love challenging myself, growing, and continuously expanding my skills.
   </p>
 </div>
 
