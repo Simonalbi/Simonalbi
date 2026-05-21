@@ -4,7 +4,7 @@
       "school": "University of Studies of Salerno",
       "logo": "schools/unisa.png",
       "website": "https://www.unisa.it",
-      "degree": "Degree in Computer Science",
+      "degree": "Bachelor's Degree in Computer Science",
       "startDate": "2022-09-01",
       "endDate": null,
       "grade": null
@@ -13,7 +13,7 @@
       "school": "Scientific High School Alfred Nobel",
       "logo": "schools/anobel.png",
       "website": "https://www.nobeltorredelgreco.edu.it/",
-      "degree": "Diploma in Applied Sciences",
+      "degree": "High School Diploma in Applied Sciences",
       "startDate": "2017-09-01",
       "endDate": "2022-07-01",
       "grade": "92/100"
