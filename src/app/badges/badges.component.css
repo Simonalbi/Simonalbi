@@ -1,6 +1,7 @@
 #badges-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
 }

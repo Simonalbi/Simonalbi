@@ -18,6 +18,6 @@ export class BadgesService {
       badge.verified,
       badge.verifiedCertificationEntityUrl,
       badge.url
-    )));
+    ))).sort((a, b) => a.issued.getTime() - b.issued.getTime());
   }
 }
