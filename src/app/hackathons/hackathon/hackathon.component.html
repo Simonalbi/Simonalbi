@@ -1,0 +1,25 @@
+<div id="hackathon-container">
+  <div class="hackathon-project-header">
+    <div class="hackathon-logo-container">
+      <img [src]="hackathon.hackathonLogo" [alt]="hackathon.hackathonName">
+    </div>
+    <div class="divider"></div>
+    <div class="hackathon-info">
+      <h5> {{ hackathon.hackathonName }} </h5>
+      <p class="sm gray-text"> {{ hackathon.getDuration() }} days in {{ hackathon.location }}</p>
+    </div>
+  </div>
+  <div class="hackathon-project">
+    <div class="hackathon-description" *ngIf="hackathon.description">
+      <p>{{ hackathon.description }}</p>
+    </div>
+    <div class="hackathon-carousel" *ngIf="hackathon.files && hackathon.files.length > 0">
+      <div class="carousel-track">
+        <div class="carousel-item" *ngFor="let file of hackathon.files">
+          <video *ngIf="isVideo(file)" [src]="file" autoplay loop muted playsinline></video>
+          <img *ngIf="isImage(file)" [src]="file" [alt]="hackathon.projectName + ' media'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

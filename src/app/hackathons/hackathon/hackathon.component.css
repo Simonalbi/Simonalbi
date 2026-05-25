@@ -1,0 +1,64 @@
+.hackathon-project-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 26px;
+}
+
+.hackathon-logo-container {
+  height: 100%;
+}
+
+.hackathon-project-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hackathon-project {
+  margin-top: 16px;
+}
+
+.hackathon-description {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color, #333);
+}
+
+.hackathon-carousel {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.carousel-item {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-item img,
+.carousel-item video {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}

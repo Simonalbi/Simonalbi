@@ -33,8 +33,12 @@
 
 #skills {
   grid-column: span 3 / span 3;
-
   grid-row-start: 5;
+}
+
+#hackathons {
+  grid-column: span 3 / span 3;
+  grid-row-start: 6;
 }
 
 @keyframes slideInDown {
@@ -71,7 +75,8 @@
   #education,
   #certifications,
   #badges,
-  #skills {
+  #skills,
+  #hackathons {
     grid-column: span 1 / span 1;
     grid-row: auto;
   }

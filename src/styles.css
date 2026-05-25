@@ -133,6 +133,13 @@ p {
   object-fit: cover;
 }
 
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: var(--chinese-white);
+  margin: 0 8px;
+}
+
 @media (max-width: 450px) {
   body {
     padding: 15px;

@@ -1,0 +1,7 @@
+#hackathons-grid {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,9 @@
+<app-dashboard-card title="Hackathons" type="list">
+  <div card-content>
+    @for (hackathon of hackathonsService.hackathons; track $index) {
+      <app-hackathon
+        [hackathon]="hackathon">
+      </app-hackathon>
+    }
+  </div>
+</app-dashboard-card>

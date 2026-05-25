@@ -6,21 +6,22 @@ import { EducationComponent } from './education/education.component';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { BadgesComponent } from "./badges/badges.component";
 import { SkillsComponent } from "./skills/skills.component";
+import { HackathonsComponent } from "./hackathons/hackathons.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileSummaryComponent, WorkingExperienceComponent, EducationComponent, CertificationsComponent, BadgesComponent, SkillsComponent],
+  imports: [RouterOutlet, ProfileSummaryComponent, WorkingExperienceComponent, EducationComponent, CertificationsComponent, BadgesComponent, SkillsComponent, HackathonsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements AfterViewInit {
   title = 'Simonalbi';
 
-  @ViewChildren('step0,step1,step2,step3,step4,step5') steps!: QueryList<ElementRef>;
+  @ViewChildren('step0,step1,step2,step3,step4,step5,step6') steps!: QueryList<ElementRef>;
 
   ngAfterViewInit() {
-    const classes = ['slide-in-down', 'fade-in', 'fade-in', 'fade-in', 'fade-in', 'fade-in'];
+    const classes = ['slide-in-down', 'fade-in', 'fade-in', 'fade-in', 'fade-in', 'fade-in', 'fade-in'];
 
     const elements = this.steps.toArray();
     let index = 0;
