@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  height: 42px;
+  height: 50px;
 }
 
 .hackathon-logo-container {
@@ -132,43 +132,6 @@
   transform: translate3d(65px, -24px, 0) scale(0.90) rotate(3deg);
   opacity: 0.6;
   filter: blur(0);
-}
-
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(16, 21, 23, 0.4) 0%, rgba(16, 21, 23, 0) 50%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.deck-card.card-0:hover .card-overlay {
-  opacity: 1;
-}
-
-.zoom-badge {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: var(--chinese-black);
-  padding: 6px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(4px);
-  transition: transform 0.2s ease;
-}
-
-.deck-card.card-0:hover .zoom-badge {
-  transform: scale(1.1);
 }
 
 .deck-controls {

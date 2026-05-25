@@ -87,19 +87,22 @@ export class HackathonComponent implements AfterViewInit, OnDestroy {
   updateVideoPlayback(): void {
     setTimeout(() => {
       const cards = this.elRef.nativeElement.querySelectorAll('.deck-card');
-      cards.forEach((card: any) => {
+      cards.forEach((card: any, index: number) => {
         const video = card.querySelector('video');
         if (video) {
           const isFront = card.classList.contains('card-0');
           if (isFront) {
+            video.muted = true;
             video.currentTime = 0;
-            video.play().catch(() => {});
+            video.play().catch((err: any) => {
+              console.warn('Autoplay prevented or video play error for card', index, err);
+            });
           } else {
             video.pause();
           }
         }
       });
-    }, 50);
+    }, 100);
   }
 
   resetProgressAndTimers(): void {
