@@ -1,0 +1,24 @@
+{
+  "hackathons": [
+    {
+      "hackathonName": "SVST Hackathon",
+      "url": "https://www.svst.it/hackathon",
+      "hackathonLogo": "/hackathons/logos/svst-50x50.png",
+      "start": "2026-05-23",
+      "end": "2026-05-24",
+      "location": "CoworkingSA | Officina84, Baronissi (SA), Italy",
+      "projectName": "GreenShift",
+      "projectLogo": "/hackathons/greenshift/green-shift-dark.svg",
+      "themes": [
+        "Sustainability"
+      ],
+      "description": "During the hackathon, our team successfully developed a complete MVP for our startup, GreenShift. Beyond the technical prototype, we managed to produce a comprehensive market analysis and both business plan and model. We set out to solve a major challenge for fleet management companies, such as those in logistics and public transport. These companies struggle to reduce their emissions, encourage consistent eco-friendly driving habits, and lack the precise data required to generate accurate ESG reports. Our solution is an integrated ecosystem that combines a smart OBD device with AI, a local model running on the hardware collects vehicle data in real-time and connects to a mobile app, providing drivers with live coaching to improve fuel efficiency based on traffic, weather, and road geometry. Collected data are sent to a cloud infrastructure where advanced AI models allow companies to monitor fleet statistics and automatically generate certified ESG reports.",
+      "files": [
+        "/hackathons/greenshift/pitch-deck-0001.jpg",
+        "/hackathons/greenshift/eco-coach.webm",
+        "/hackathons/greenshift/mobile-app.webm",
+        "/hackathons/greenshift/pitch-deck-0009.jpg"
+      ]
+    }
+  ]
+}
