@@ -9,17 +9,76 @@
       <p class="sm gray-text"> {{ hackathon.getDuration() }} days in {{ hackathon.location }}</p>
     </div>
   </div>
-  <div class="hackathon-project">
-    <div class="hackathon-description" *ngIf="hackathon.description">
-      <p>{{ hackathon.description }}</p>
-    </div>
-    <div class="hackathon-carousel" *ngIf="hackathon.files && hackathon.files.length > 0">
-      <div class="carousel-track">
-        <div class="carousel-item" *ngFor="let file of hackathon.files">
-          <video *ngIf="isVideo(file)" [src]="file" autoplay loop muted playsinline></video>
-          <img *ngIf="isImage(file)" [src]="file" [alt]="hackathon.projectName + ' media'">
+
+  <div class="hackathon-project" [class.has-media]="hackathon.files && hackathon.files.length > 0">
+    @if (hackathon.files && hackathon.files.length > 0) {
+      <div class="hackathon-media-column">
+        <div class="hackathon-media-deck">
+          @for (file of hackathon.files; track file; let i = $index) {
+            <div class="deck-card card-{{ getRelativeIndex(i) }}"
+                 [style.z-index]="hackathon.files.length - getRelativeIndex(i)"
+                 [style.--relative-index]="getRelativeIndex(i)"
+                 (click)="onCardClick(i)">
+
+              @if (isVideo(file)) {
+                <video [src]="file"
+                       muted
+                       playsinline
+                       (timeupdate)="onVideoTimeUpdate($event)"
+                       (ended)="onVideoEnded()">
+                </video>
+              }
+
+              @if (isImage(file)) {
+                <img [src]="file" [alt]="hackathon.projectName + ' media'">
+              }
+
+              @if (getRelativeIndex(i) === 0) {
+                <div class="card-overlay">
+                  <span class="zoom-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                      <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+                    </svg>
+                  </span>
+                </div>
+              }
+            </div>
+          }
         </div>
+
+        @if (hackathon.files.length > 1) {
+          <div class="deck-controls">
+            <button class="nav-btn prev" (click)="prevCard()" aria-label="Previous media">
+              <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+              </svg>
+            </button>
+
+            <div class="deck-indicators">
+              @for (file of hackathon.files; track file; let i = $index) {
+                <span class="indicator-dot"
+                      [class.active]="i === activeCardIndex"
+                      [class.image-active]="i === activeCardIndex && isImage(file)"
+                      [style.--progress.%]="i === activeCardIndex && isVideo(file) ? progressPercentage : 0"
+                      (click)="setActiveCard(i)">
+                </span>
+              }
+            </div>
+
+            <button class="nav-btn next" (click)="nextCard()" aria-label="Next media">
+              <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                <path d="M384-120 328-176l252-252-252-252 56-56 308 308-308 308Z"/>
+              </svg>
+            </button>
+          </div>
+        }
       </div>
-    </div>
+    }
+
+    @if (hackathon.description) {
+      <div class="hackathon-description-column">
+        <p>{{ hackathon.description }}</p>
+      </div>
+    }
   </div>
 </div>

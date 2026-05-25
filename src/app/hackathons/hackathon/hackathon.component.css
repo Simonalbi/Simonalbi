@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  height: 26px;
+  height: 42px;
 }
 
 .hackathon-logo-container {
@@ -17,48 +17,297 @@
 }
 
 .hackathon-project {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
-.hackathon-description {
-  margin-bottom: 16px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-color, #333);
+.hackathon-project.has-media {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
-.hackathon-carousel {
+.hackathon-media-column {
   width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  padding-bottom: 8px;
-}
-
-.carousel-track {
+  max-width: 400px;
+  height: 100%;
   display: flex;
-  gap: 16px;
-  width: max-content;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.carousel-item {
-  scroll-snap-align: center;
-  flex: 0 0 auto;
+.hackathon-media-deck {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.deck-card {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   height: 250px;
-  border-radius: 8px;
+  width: fit-content;
+  max-height: 250px;
+  max-width: 100%;
+  border-radius: 12px;
   overflow: hidden;
-  background-color: transparent;
+  background-color: var(--chinese-black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 0.6s ease,
+    filter 0.6s ease,
+    box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.deck-card img,
+.deck-card video {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-height: 250px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.deck-card.card-0 {
+  transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  opacity: 1;
+  filter: blur(0);
+  pointer-events: auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.deck-card.card-1 {
+  transform: translate3d(10px, -6px, 0) scale(0.96) rotate(1.5deg);
+  opacity: 0.85;
+  filter: blur(0.4px);
+  pointer-events: none;
+}
+
+.deck-card.card-2 {
+  transform: translate3d(20px, -12px, 0) scale(0.92) rotate(-1.5deg);
+  opacity: 0.65;
+  filter: blur(0.8px);
+  pointer-events: none;
+}
+
+.deck-card.card-3 {
+  transform: translate3d(30px, -18px, 0) scale(0.88) rotate(2.5deg);
+  opacity: 0.4;
+  filter: blur(1.2px);
+  pointer-events: none;
+}
+
+.deck-card[class*="card-"]:not(.card-0):not(.card-1):not(.card-2):not(.card-3) {
+  transform: translate3d(40px, -24px, 0) scale(0.84);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hackathon-media-deck:hover .deck-card.card-0 {
+  transform: translate3d(-10px, 0, 0) scale(1.02) rotate(-1deg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.hackathon-media-deck:hover .deck-card.card-1 {
+  transform: translate3d(15px, -8px, 0) scale(0.98) rotate(2deg);
+  opacity: 0.92;
+  filter: blur(0);
+}
+
+.hackathon-media-deck:hover .deck-card.card-2 {
+  transform: translate3d(40px, -16px, 0) scale(0.94) rotate(-2deg);
+  opacity: 0.8;
+  filter: blur(0);
+}
+
+.hackathon-media-deck:hover .deck-card.card-3 {
+  transform: translate3d(65px, -24px, 0) scale(0.90) rotate(3deg);
+  opacity: 0.6;
+  filter: blur(0);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(16, 21, 23, 0.4) 0%, rgba(16, 21, 23, 0) 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.deck-card.card-0:hover .card-overlay {
+  opacity: 1;
+}
+
+.zoom-badge {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--chinese-black);
+  padding: 6px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease;
 }
 
-.carousel-item img,
-.carousel-item video {
-  width: auto;
+.deck-card.card-0:hover .zoom-badge {
+  transform: scale(1.1);
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid var(--chinese-white);
+  color: var(--davis-gray);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--chinese-black);
+  border-color: var(--chinese-black);
+  color: var(--pure-white);
+}
+
+.deck-indicators {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--chinese-white);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.indicator-dot.active {
+  width: 20px;
+  border-radius: 4px;
+  background-color: var(--chinese-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.indicator-dot.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  width: var(--progress, 0%);
+  background-color: var(--chinese-black);
+  border-radius: 4px;
+  transition: width 0.25s linear; /* Smooths out the 250ms HTML5 video timeupdate events! */
+}
+
+.indicator-dot.active.image-active::after {
+  width: 0%;
+  animation: fillProgress 5s linear forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.hackathon-description-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 270px;
+}
+
+.hackathon-description-column p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--davis-gray);
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .hackathon-project.has-media {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hackathon-media-column {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hackathon-media-deck {
+    height: 240px;
+    width: 100%;
+  }
+
+  .deck-card {
+    height: 220px;
+    width: fit-content;
+    max-height: 220px;
+    max-width: 100%;
+  }
+
+  .hackathon-media-deck:hover .deck-card.card-0 {
+    transform: translate3d(-5px, 0, 0) scale(1.01) rotate(-1deg);
+  }
+
+  .hackathon-media-deck:hover .deck-card.card-1 {
+    transform: translate3d(10px, -5px, 0) scale(0.98) rotate(2deg);
+  }
+
+  .hackathon-media-deck:hover .deck-card.card-2 {
+    transform: translate3d(25px, -10px, 0) scale(0.94) rotate(-2deg);
+  }
+
+  .hackathon-media-deck:hover .deck-card.card-3 {
+    transform: translate3d(40px, -15px, 0) scale(0.90) rotate(3deg);
+  }
+
+  .deck-controls {
+    max-width: 220px;
+  }
+
+  .hackathon-description-column {
+    min-height: auto;
+  }
 }
