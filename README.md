@@ -18,7 +18,9 @@
   </p>
 </div>
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=simonalbi&theme=sakura-x&hide_border=true&border_radius=10&short_numbers=true&date_format=M%20j%5B%2C%20Y%5D" style="width: 100%" alt="GitHub Streak" />
+<a href="https://git.io/streak-stats">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=Simonalbi&theme=sakura-x&border_radius=10&short_numbers=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" style="width: 100%" />
+</a>
 
 ## 🚀 Currently Exploring
 
