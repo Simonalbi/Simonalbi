@@ -246,7 +246,7 @@
 
 .window-body {
   padding: 24px 0;
-  font-family: 'DM Mono', 'Courier New', Courier, monospace;
+  font-family: 'Fira Code', 'Consolas', 'Menlo', monospace;
   font-size: 1.1rem;
   font-weight: 500;
   color: #1e293b;
@@ -340,7 +340,7 @@
   padding-right: 12px;
   margin-right: 24px;
   user-select: none;
-  font-family: 'DM Mono', 'Courier New', Courier, monospace;
+  font-family: 'Fira Code', 'Consolas', 'Menlo', monospace;
 }
 
 .indent-code {
