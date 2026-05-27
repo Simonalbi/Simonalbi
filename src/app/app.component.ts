@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren, NgZone } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfileSummaryComponent } from "./components/profile-summary/profile-summary.component";
 import { WorkingExperienceComponent } from "./components/working-experience/working-experience.component";
@@ -18,11 +18,32 @@ import { HackathonsComponent } from "./components/hackathons/hackathons.componen
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'Simonalbi';
 
+  private unlistenMouseMove?: () => void;
+
+  constructor(private ngZone: NgZone) {}
+
   @ViewChildren('section') sections!: QueryList<ElementRef>;
 
   private observer!: IntersectionObserver;
 
   ngAfterViewInit() {
+    // Run outside Angular so mouse moves don't trigger change detection loops
+    this.ngZone.runOutsideAngular(() => {
+      let ticking = false;
+      const mouseHandler = (event: MouseEvent) => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      document.addEventListener('mousemove', mouseHandler, { passive: true });
+      this.unlistenMouseMove = () => document.removeEventListener('mousemove', mouseHandler);
+    });
+
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,5 +66,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.observer?.disconnect();
+    if (this.unlistenMouseMove) {
+      this.unlistenMouseMove();
+    }
   }
 }

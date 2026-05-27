@@ -19,8 +19,19 @@
   }
 
   body {
-    @apply bg-background font-sans text-primary;
+    @apply font-sans text-primary relative;
+    background-color: #FAFAFA;
+    /* Subtle modern dot grid pattern to fill empty space */
+    background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center top;
     padding: 24px;
+    animation: grid-scroll 60s linear infinite;
+  }
+
+  @keyframes grid-scroll {
+    0% { background-position: center 0px; }
+    100% { background-position: center 128px; }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -66,7 +77,6 @@
     @apply align-middle;
   }
 
-  /* Logo container */
   .logo-container {
     @apply w-12 min-w-[48px] h-12 min-h-[48px] rounded-full overflow-hidden flex-shrink-0;
   }
@@ -75,7 +85,6 @@
     @apply w-full h-full object-cover;
   }
 
-  /* Scroll animation base */
   .scroll-reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -98,4 +107,134 @@
   .logo-container {
     @apply w-9 min-w-[36px] h-9 min-h-[36px];
   }
+}
+
+/* ===== Ambient Background Effects (Aurora / Glassmorphism glow) ===== */
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -10;
+  pointer-events: none;
+  opacity: 0.15;
+  animation: aurora-drift 20s infinite ease-in-out alternate;
+}
+
+.bg-orb-1 {
+  top: -10%;
+  right: -5%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background-color: theme('colors.accent.DEFAULT');
+  animation-delay: 0s;
+}
+
+.bg-orb-2 {
+  bottom: -10%;
+  left: -5%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background-color: theme('colors.accent.light');
+  animation-delay: -10s; /* Start the animation midway so they drift out of sync */
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5%, 10%) scale(1.05);
+  }
+  66% {
+    transform: translate(-5%, 5%) scale(0.95);
+  }
+  100% {
+    transform: translate(0, -10%) scale(1.1);
+  }
+}
+
+/* ===== Interactive Spotlight ===== */
+.mouse-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  height: 1200px;
+  margin-top: -600px;
+  margin-left: -600px;
+  z-index: -5;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at center,
+    rgba(148, 57, 194, 0.05),
+    transparent 40%
+  );
+  transform: translate3d(var(--mouse-x, 50vw), var(--mouse-y, 50vh), 0);
+  will-change: transform;
+}
+
+/* ===== Random Blinking Symbols ===== */
+.random-symbols {
+  position: fixed;
+  inset: 0;
+  z-index: -15;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.rs {
+  position: absolute;
+  font-family: monospace;
+  font-size: 1.5rem; /* Slightly larger than grid dots (which are 2px) */
+  font-weight: 700;
+  color: #94A3B8;
+  opacity: 0; /* Default invisible */
+}
+
+/* Positions and animations distributed randomly across LEFT and RIGHT margins */
+/* LEFT margin */
+.rs-1 { top: 5%; left: 10%; animation: blink 14s infinite 0s; }
+.rs-2 { top: 15%; left: 4%; font-size: 1.25rem; animation: blink 18s infinite 1s; }
+.rs-3 { top: 25%; left: 18%; font-size: 2rem; animation: blink 15s infinite 2s; }
+.rs-4 { top: 35%; left: 8%; animation: blink 21s infinite 0.5s; }
+.rs-5 { top: 45%; left: 15%; font-size: 1.75rem; animation: blink 16s infinite 3s; }
+.rs-6 { top: 55%; left: 5%; animation: blink 20s infinite 1.5s; }
+.rs-7 { top: 65%; left: 12%; font-size: 1.25rem; animation: blink 17s infinite 2.5s; }
+.rs-8 { top: 75%; left: 18%; animation: blink 22s infinite 0.2s; }
+.rs-9 { top: 85%; left: 6%; font-size: 2rem; animation: blink 13s infinite 4s; }
+.rs-10 { top: 92%; left: 14%; animation: blink 19s infinite 1.2s; }
+.rs-11 { top: 10%; left: 2%; font-size: 1.1rem; animation: blink 18s infinite 3.5s; }
+.rs-12 { top: 80%; left: 3%; font-size: 1.5rem; animation: blink 24s infinite 2.2s; }
+
+/* RIGHT margin */
+.rs-13 { top: 8%; right: 12%; animation: blink 15s infinite 1s; }
+.rs-14 { top: 18%; right: 6%; font-size: 1.25rem; animation: blink 21s infinite 0s; }
+.rs-15 { top: 28%; right: 16%; font-size: 2rem; animation: blink 12s infinite 2.5s; }
+.rs-16 { top: 38%; right: 5%; animation: blink 20s infinite 1.5s; }
+.rs-17 { top: 48%; right: 18%; font-size: 1.75rem; animation: blink 17s infinite 3s; }
+.rs-18 { top: 58%; right: 8%; animation: blink 14s infinite 0.5s; }
+.rs-19 { top: 68%; right: 15%; font-size: 1.25rem; animation: blink 23s infinite 2s; }
+.rs-20 { top: 78%; right: 4%; animation: blink 16s infinite 4s; }
+.rs-21 { top: 88%; right: 12%; font-size: 2rem; animation: blink 21s infinite 1.8s; }
+.rs-22 { top: 95%; right: 7%; animation: blink 15s infinite 3.2s; }
+.rs-23 { top: 22%; right: 2%; font-size: 1.1rem; animation: blink 25s infinite 0.8s; }
+.rs-24 { top: 82%; right: 18%; font-size: 1.5rem; animation: blink 18s infinite 2.8s; }
+
+/* Additional diverse symbols */
+.rs-25 { top: 30%; left: 12%; animation: blink 17s infinite 1.8s; }
+.rs-26 { top: 70%; left: 8%; font-size: 1.25rem; animation: blink 20s infinite 3.5s; }
+.rs-27 { top: 40%; left: 3%; animation: blink 13s infinite 0.9s; }
+.rs-28 { top: 12%; right: 4%; font-size: 1.1rem; animation: blink 18s infinite 2.2s; }
+.rs-29 { top: 55%; right: 14%; animation: blink 21s infinite 4.1s; }
+.rs-30 { top: 85%; right: 5%; font-size: 1.5rem; animation: blink 15s infinite 1.4s; }
+
+@keyframes blink {
+  0% { opacity: 0; transform: scale(0.9); }
+  10% { opacity: 0.6; transform: scale(1); }
+  20% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 0; }
 }
