@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Company } from './company.model';
-import { Role } from './role.model';
+import { Company } from '../models/company.model';
+import { Role } from '../models/role.model';
 
 import * as WORKING_EXPERIENCE from '../../../public/json/working-experience.json';
 

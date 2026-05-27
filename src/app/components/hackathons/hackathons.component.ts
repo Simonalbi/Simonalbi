@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DashboardCardComponent } from "../dashboard-card/dashboard-card.component";
-import { HackathonsService } from '../services/hackathons.service';
+import { HackathonsService } from '../../services/hackathons.service';
 import { HackathonComponent } from "./hackathon/hackathon.component";
 
 @Component({

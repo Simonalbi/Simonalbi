@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Badge } from './badge.model';
+import { Badge } from '../models/badge.model';
 
 import * as BADGES from '../../../public/json/badges.json';
 

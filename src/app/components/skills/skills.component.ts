@@ -7,7 +7,7 @@ import * as echarts from 'echarts/core';
 import { BarChart, ScatterChart } from 'echarts/charts';
 import { GridComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
-import { SkillsService } from '../services/skills.service';
+import { SkillsService } from '../../services/skills.service';
 
 echarts.use([BarChart, GridComponent, CanvasRenderer, ScatterChart]);
 

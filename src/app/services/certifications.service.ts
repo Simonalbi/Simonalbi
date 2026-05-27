@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Certification } from './certification.model';
+import { Certification } from '../models/certification.model';
 
 import * as CERTIFICATIONS from '../../../public/json/certifications.json';
 

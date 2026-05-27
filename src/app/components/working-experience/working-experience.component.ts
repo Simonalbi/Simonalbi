@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DashboardCardComponent } from "../dashboard-card/dashboard-card.component";
 import { AgencyTimelineComponent } from './agency-timeline/agency-timeline.component';
-import { WorkingExperienceService } from '../services/working-experience.service';
+import { WorkingExperienceService } from '../../services/working-experience.service';
 
 @Component({
   selector: 'app-working-experience',

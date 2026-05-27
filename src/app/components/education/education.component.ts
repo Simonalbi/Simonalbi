@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DashboardCardComponent } from "../dashboard-card/dashboard-card.component";
-import { EducationService } from '../services/education.service';
+import { EducationService } from '../../services/education.service';
 import { SchoolComponent } from "./school/school.component";
 
 @Component({

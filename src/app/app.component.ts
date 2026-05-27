@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProfileSummaryComponent } from "./profile-summary/profile-summary.component";
-import { WorkingExperienceComponent } from "./working-experience/working-experience.component";
-import { EducationComponent } from './education/education.component';
-import { CertificationsComponent } from './certifications/certifications.component';
-import { BadgesComponent } from "./badges/badges.component";
-import { SkillsComponent } from "./skills/skills.component";
-import { HackathonsComponent } from "./hackathons/hackathons.component";
+import { ProfileSummaryComponent } from "./components/profile-summary/profile-summary.component";
+import { WorkingExperienceComponent } from "./components/working-experience/working-experience.component";
+import { EducationComponent } from './components/education/education.component';
+import { CertificationsComponent } from './components/certifications/certifications.component';
+import { BadgesComponent } from "./components/badges/badges.component";
+import { SkillsComponent } from "./components/skills/skills.component";
+import { HackathonsComponent } from "./components/hackathons/hackathons.component";
 
 @Component({
   selector: 'app-root',

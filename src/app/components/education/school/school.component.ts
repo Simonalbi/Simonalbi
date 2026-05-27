@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { School } from '../../services/school.model';
+import { School } from '../../../models/school.model';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Hackathon } from './hackathon.model';
+import { Hackathon } from '../models/hackathon.model';
 
 import * as HACKATHONS from '../../../public/json/hackathons.json';
 

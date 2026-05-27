@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { School } from './school.model';
+import { School } from '../models/school.model';
 
 import * as EDUCATION from '../../../public/json/education.json';
 

@@ -1,5 +1,5 @@
 import { Component, Input, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
-import { Hackathon } from '../../services/hackathon.model';
+import { Hackathon } from '../../../models/hackathon.model';
 import { CommonModule } from '@angular/common';
 
 @Component({

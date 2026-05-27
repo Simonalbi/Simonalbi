@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DashboardCardComponent } from "../dashboard-card/dashboard-card.component";
-import { BadgesService } from '../services/badges.service';
+import { BadgesService } from '../../services/badges.service';
 import { BadgeComponent } from "./badge/badge.component";
 
 @Component({
