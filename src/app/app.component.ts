@@ -7,11 +7,12 @@ import { CertificationsComponent } from './components/certifications/certificati
 import { BadgesComponent } from "./components/badges/badges.component";
 import { SkillsComponent } from "./components/skills/skills.component";
 import { HackathonsComponent } from "./components/hackathons/hackathons.component";
+import { CodeLoaderComponent } from './components/code-loader/code-loader.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileSummaryComponent, WorkingExperienceComponent, EducationComponent, CertificationsComponent, BadgesComponent, SkillsComponent, HackathonsComponent],
+  imports: [RouterOutlet, ProfileSummaryComponent, WorkingExperienceComponent, EducationComponent, CertificationsComponent, BadgesComponent, SkillsComponent, HackathonsComponent, CodeLoaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

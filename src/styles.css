@@ -21,8 +21,7 @@
   body {
     @apply font-sans text-primary relative;
     background-color: #FAFAFA;
-    /* Subtle modern dot grid pattern to fill empty space */
-    background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+    background-image: radial-gradient(#CBD5E1 1px, transparent 1px); /* Dot grid pattern */
     background-size: 32px 32px;
     background-position: center top;
     padding: 24px;
@@ -59,7 +58,6 @@
 
 /* ===== Component Layer ===== */
 @layer components {
-  /* Icon containers */
   .icon-sm,
   .icon-md,
   .icon-lg {
@@ -109,7 +107,7 @@
   }
 }
 
-/* ===== Ambient Background Effects (Aurora / Glassmorphism glow) ===== */
+/* ===== Glow background effects ===== */
 .bg-orb {
   position: fixed;
   border-radius: 50%;
@@ -189,14 +187,13 @@
 .rs {
   position: absolute;
   font-family: monospace;
-  font-size: 1.5rem; /* Slightly larger than grid dots (which are 2px) */
+  font-size: 1.5rem;
   font-weight: 700;
   color: #94A3B8;
-  opacity: 0; /* Default invisible */
+  opacity: 0;
 }
 
 /* Positions and animations distributed randomly across LEFT and RIGHT margins */
-/* LEFT margin */
 .rs-1 { top: 5%; left: 10%; animation: blink 14s infinite 0s; }
 .rs-2 { top: 15%; left: 4%; font-size: 1.25rem; animation: blink 18s infinite 1s; }
 .rs-3 { top: 25%; left: 18%; font-size: 2rem; animation: blink 15s infinite 2s; }
@@ -209,8 +206,6 @@
 .rs-10 { top: 92%; left: 14%; animation: blink 19s infinite 1.2s; }
 .rs-11 { top: 10%; left: 2%; font-size: 1.1rem; animation: blink 18s infinite 3.5s; }
 .rs-12 { top: 80%; left: 3%; font-size: 1.5rem; animation: blink 24s infinite 2.2s; }
-
-/* RIGHT margin */
 .rs-13 { top: 8%; right: 12%; animation: blink 15s infinite 1s; }
 .rs-14 { top: 18%; right: 6%; font-size: 1.25rem; animation: blink 21s infinite 0s; }
 .rs-15 { top: 28%; right: 16%; font-size: 2rem; animation: blink 12s infinite 2.5s; }
@@ -223,8 +218,6 @@
 .rs-22 { top: 95%; right: 7%; animation: blink 15s infinite 3.2s; }
 .rs-23 { top: 22%; right: 2%; font-size: 1.1rem; animation: blink 25s infinite 0.8s; }
 .rs-24 { top: 82%; right: 18%; font-size: 1.5rem; animation: blink 18s infinite 2.8s; }
-
-/* Additional diverse symbols */
 .rs-25 { top: 30%; left: 12%; animation: blink 17s infinite 1.8s; }
 .rs-26 { top: 70%; left: 8%; font-size: 1.25rem; animation: blink 20s infinite 3.5s; }
 .rs-27 { top: 40%; left: 3%; animation: blink 13s infinite 0.9s; }

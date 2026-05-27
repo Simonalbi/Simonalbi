@@ -25,7 +25,6 @@
   object-fit: contain;
 }
 
-/* Invert the open-in-new icon when the link is hovered */
 .badge-link:hover img {
   filter: brightness(0) invert(1);
 }
