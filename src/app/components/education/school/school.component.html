@@ -1,19 +1,19 @@
-<div class="school-container">
+<div class="flex items-start gap-3">
   <div class="logo-container">
     <img [src]="school.logo">
   </div>
 
-  <div class="school-info-container">
-    <h5>
+  <div class="flex-1">
+    <h5 class="text-base font-semibold text-primary flex items-center gap-1.5">
       {{ school.name }}
-      <a [href]="school.website" target="_blank">
-        <img src="gicons/open_in_new.svg" alt="School website">
+      <a [href]="school.website" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
+        <img src="gicons/open_in_new.svg" alt="School website" class="w-4 h-4">
       </a>
     </h5>
-    <p class="sm">{{ school.degree }}</p>
-    <p class="sm gray-text">{{ school.startDate | date: 'MMM y'}} - {{ (school.endDate  | date: 'MMM y') ?? "Current"}}</p>
+    <p class="text-sm text-primary/80 mt-0.5">{{ school.degree }}</p>
+    <p class="text-sm text-secondary mt-0.5">{{ school.startDate | date: 'MMM y'}} - {{ (school.endDate  | date: 'MMM y') ?? "Current"}}</p>
     <!-- @if (school.grade) {
-      <p class="sm gray-text">Grade: {{ school.grade }}</p>
+      <p class="text-sm text-secondary">Grade: {{ school.grade }}</p>
     } -->
   </div>
 </div>

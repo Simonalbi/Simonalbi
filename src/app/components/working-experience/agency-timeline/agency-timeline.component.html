@@ -1,40 +1,40 @@
 <div class="experience-info-container">
-  <div class="experience-header-container">
+  <div class="flex items-start gap-3">
     <div class="logo-container">
       <img [src]="company.logo">
     </div>
 
-    <div class="company-info-container" [ngClass]="{'timeline-header': company.roles.length > 1}">
-      <h5>
+    <div class="flex-1" [ngClass]="{'mb-3': company.roles.length > 1}">
+      <h5 class="text-base font-semibold text-primary flex items-center gap-1.5">
         {{ company.roles.length > 1 ? company.name : company.roles[0].name }}
-        <a [href]="company.website" target="_blank">
-          <img src="gicons/open_in_new.svg" alt="Company website">
+        <a [href]="company.website" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
+          <img src="gicons/open_in_new.svg" alt="Company website" class="w-4 h-4">
         </a>
       </h5>
       @if (company.roles.length === 1) {
-        <p class="sm">{{ company.name }} · {{ company.workMode }}</p>
-        <p class="sm gray-text">{{ company.absoluteStartDate | date: 'MMM y'}} - {{ (company.absoluteEndDate  | date: 'MMM y') ?? "Current"}} · {{ company.periodString }}</p>
-        <p class="sm gray-text">{{ company.location }} · {{ company.roles[0].contractType }}</p>
+        <p class="text-sm text-primary/80 mt-0.5">{{ company.name }} · {{ company.workMode }}</p>
+        <p class="text-sm text-secondary mt-0.5">{{ company.absoluteStartDate | date: 'MMM y'}} - {{ (company.absoluteEndDate  | date: 'MMM y') ?? "Current"}} · {{ company.periodString }}</p>
+        <p class="text-sm text-secondary">{{ company.location }} · {{ company.roles[0].contractType }}</p>
       } @else {
-        <p class="sm">{{ company.periodString }}</p>
-        <p class="sm gray-text">{{ company.location }} · {{ company.workMode }}</p>
+        <p class="text-sm text-primary/80 mt-0.5">{{ company.periodString }}</p>
+        <p class="text-sm text-secondary">{{ company.location }} · {{ company.workMode }}</p>
       }
     </div>
   </div>
 
   @if (company.roles.length > 1) {
     @for (role of company.roles; track $index) {
-      <div class="company-role-container">
+      <div class="flex gap-3">
         <div class="company-timeline-container">
           <div class="company-timeline-node"></div>
           @if ($index !== company.roles.length - 1) {
             <div class="company-timeline-line"></div>
           }
         </div>
-        <div class="company-role-info">
-          <h6>{{ role.name }}</h6>
-          <p class="sm">{{ role.contractType }}</p>
-          <p class="sm gray-text">{{ role.startDate | date: 'MMM y'}} - {{ (role.endDate| date: 'MMM y') ?? "Current"}} · {{ role.periodString }}</p>
+        <div class="pb-6">
+          <h6 class="text-sm font-semibold text-primary">{{ role.name }}</h6>
+          <p class="text-sm text-primary/80">{{ role.contractType }}</p>
+          <p class="text-sm text-secondary">{{ role.startDate | date: 'MMM y'}} - {{ (role.endDate| date: 'MMM y') ?? "Current"}} · {{ role.periodString }}</p>
         </div>
       </div>
     }

@@ -1,10 +1,13 @@
 #avatar-container {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  display: block;
-
   overflow: hidden;
+  flex-shrink: 0;
+  margin-top: -75px;
+  position: relative;
+  z-index: 10;
+  border: 4px solid #FFFFFF;
 }
 
 #avatar-container > img {
@@ -13,24 +16,67 @@
   object-fit: cover;
 }
 
-#title-container {
-  margin-bottom: 20px;
-}
-
-#biography {
-  line-height: 140%;
-  margin-bottom: 20px;
-}
-
-#personal-data-container {
+.social-link {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
 }
 
-#social-container {
-  display: flex;
-  justify-content: flex-end;
+.social-icon {
+  width: 28px;
+  height: 28px;
+  background-color: #0F172A;
+  mask-image: var(--icon);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: var(--icon);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: background-color 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-4px) scale(1.15);
+}
+
+.social-link:hover .social-icon {
+  background-color: theme('colors.accent.DEFAULT');
+}
+
+.social-link:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 639px) {
+  #avatar-container {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Override the default padding of the dashboard card specifically for the mobile social links */
+#mobile-social-card ::ng-deep .card-content {
+  padding: 4px 8px;
+}
+
+/* Hide the empty footer that adds unwanted bottom padding */
+#mobile-social-card ::ng-deep .card-footer {
+  display: none;
+}
+
+#mobile-social-card .social-link {
+  flex: 1;
+  padding: 4px;
+  max-width: 44px;
+}
+
+#mobile-social-card .social-icon {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }

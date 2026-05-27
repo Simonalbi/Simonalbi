@@ -1,48 +1,81 @@
-<app-dashboard-card banner="banner.png">
-  <div card-content>
-    <div id="avatar-container">
-      <img src="avatar.png" alt="avatar">
+<div class="flex flex-col gap-4 w-full">
+  <app-dashboard-card banner="banner.png">
+    <div card-content>
+      <div class="flex justify-between items-start w-full">
+        <div id="avatar-container">
+          <img src="avatar.png" alt="avatar">
+        </div>
+
+        <!-- Social icons (Desktop) - Hidden on Mobile -->
+        <div id="social-container" class="hidden sm:flex justify-end items-center gap-1 flex-wrap">
+          <a class="social-link" href="https://www.linkedin.com/in/simone-francesco-albino/" title="Linkedin" target="_blank" aria-label="Linkedin">
+            <div class="social-icon" style="--icon: url('social/linkedin.svg');"></div>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/simone.albino_/" title="Instagram" target="_blank" aria-label="Instagram">
+            <div class="social-icon" style="--icon: url('social/instagram.svg');"></div>
+          </a>
+          <a class="social-link" href="https://github.com/Simonalbi" title="GitHub" target="_blank" aria-label="GitHub">
+            <div class="social-icon" style="--icon: url('social/github.svg');"></div>
+          </a>
+          <a class="social-link" href="https://threads.net/simone.albino_" title="Threads" target="_blank" aria-label="Threads">
+            <div class="social-icon" style="--icon: url('social/threads.svg');"></div>
+          </a>
+          <a class="social-link" href="https://x.com/Simonalbi" title="X" target="_blank" aria-label="X">
+            <div class="social-icon" style="--icon: url('social/x.svg');"></div>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/@Simonalbi" title="YouTube" target="_blank" aria-label="YouTube">
+            <div class="social-icon" style="--icon: url('social/youtube.svg');"></div>
+          </a>
+        </div>
+      </div>
+
+      <div id="title-container" class="mt-3">
+        <h1 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight">Simone Francesco Albino</h1>
+        <p class="text-secondary text-sm sm:text-base mt-1">Custom Software Engineering Analyst, Accenture</p>
+        <p class="text-secondary text-xs sm:text-sm mt-0.5">He / Him · Italy</p>
+      </div>
+
+      <p id="biography" class="text-primary/80 leading-relaxed mt-5 text-sm sm:text-base">
+        Hi! I'm Simone! As a Software Engineer, I am driven by a simple but powerful belief:
+        <b class="text-primary font-semibold">developers have the tools to genuinely change the world</b>.
+        There's something magical about the fact that if you can imagine it, you can build it. I'm fascinated by
+        everything related to programming, development,
+        and the endless possibilities offered by digital innovation. Over time, I've had the opportunity to learn a lot,
+        but I know there's always something new
+        and exciting to discover. That's why, driven by curiosity and the desire to improve, I love challenging myself,
+        growing, and continuously expanding my
+        skills.
+      </p>
+
+      <div id="personal-data-container" class="flex flex-wrap justify-start gap-x-4 gap-y-2 mt-4 text-xs sm:text-sm text-secondary">
+        <span class="icon-md whitespace-nowrap"><img src="gicons/cake.svg" alt="birthday_cake">{{ birthday }}</span>
+        <span class="icon-md whitespace-nowrap"><img src="gicons/schedule.svg" alt="clock">{{ age }} Years old</span>
+        <span class="icon-md whitespace-nowrap"><img src="gicons/home.svg" alt="home">Torre del Greco (NA), Italy</span>
+      </div>
     </div>
+  </app-dashboard-card>
 
-    <div id="title-container">
-      <h1>Simone Francesco Albino</h1>
-      <p class="gray-text">Custom Software Engineering Analyst, Accenture</p>
-      <p class="gray-text">He / Him · Italy</p>
+  <!-- Social icons (Mobile) - Hidden on Desktop -->
+  <app-dashboard-card id="mobile-social-card" class="block sm:hidden">
+    <div card-content class="flex flex-nowrap justify-between items-center w-full gap-2">
+      <a class="social-link" href="https://www.linkedin.com/in/simone-francesco-albino/" title="Linkedin" target="_blank" aria-label="Linkedin">
+        <div class="social-icon" style="--icon: url('social/linkedin.svg');"></div>
+      </a>
+      <a class="social-link" href="https://www.instagram.com/simone.albino_/" title="Instagram" target="_blank" aria-label="Instagram">
+        <div class="social-icon" style="--icon: url('social/instagram.svg');"></div>
+      </a>
+      <a class="social-link" href="https://github.com/Simonalbi" title="GitHub" target="_blank" aria-label="GitHub">
+        <div class="social-icon" style="--icon: url('social/github.svg');"></div>
+      </a>
+      <a class="social-link" href="https://threads.net/simone.albino_" title="Threads" target="_blank" aria-label="Threads">
+        <div class="social-icon" style="--icon: url('social/threads.svg');"></div>
+      </a>
+      <a class="social-link" href="https://x.com/Simonalbi" title="X" target="_blank" aria-label="X">
+        <div class="social-icon" style="--icon: url('social/x.svg');"></div>
+      </a>
+      <a class="social-link" href="https://www.youtube.com/@Simonalbi" title="YouTube" target="_blank" aria-label="YouTube">
+        <div class="social-icon" style="--icon: url('social/youtube.svg');"></div>
+      </a>
     </div>
-
-    <p id="biography">
-      Hi! I'm Simone! As a Software Engineer, I am driven by a simple but powerful belief: <b>developers have the tools to genuinely change the world</b>.
-      There's something magical about the fact that if you can imagine it, you can build it. I'm fascinated by everything related to programming, development,
-      and the endless possibilities offered by digital innovation. Over time, I've had the opportunity to learn a lot, but I know there's always something new
-      and exciting to discover. That's why, driven by curiosity and the desire to improve, I love challenging myself, growing, and continuously expanding my
-      skills.
-    </p>
-
-    <div id="personal-data-container">
-      <span class="icon-md"><img src="gicons/cake.svg" alt="birthday_cake">{{ birthday }}</span>
-      <span class="icon-md"><img src="gicons/schedule.svg" alt="clock">{{ age }} Years old</span>
-      <span class="icon-md"><img src="gicons/home.svg" alt="home">Torre del Greco (NA), Italy</span>
-    </div>
-  </div>
-
-  <div id="social-container" card-footer>
-    <a class="icon-lg" href="https://www.linkedin.com/in/simone-francesco-albino/" title="Linkedin" target="_blank">
-      <img src="social/linkedin.svg" alt="Linkedin">
-    </a>
-    <a class="icon-lg" href="https://www.instagram.com/simone.albino_/" title="Instagram" target="_blank">
-      <img src="social/instagram.svg" alt="Instagram">
-    </a>
-    <a class="icon-lg" href="https://github.com/Simonalbi" title="GitHub" target="_blank">
-      <img src="social/github.svg" alt="GitHub">
-    </a>
-    <a class="icon-lg" href="https://threads.net/simone.albino_" title="Threads" target="_blank">
-      <img src="social/threads.svg" alt="Threads">
-    </a>
-    <a class="icon-lg" href="https://x.com/Simonalbi" title="X" target="_blank">
-      <img src="social/x.svg" alt="X">
-    </a>
-    <a class="icon-lg" href="https://www.youtube.com/@Simonalbi" title="YouTube" target="_blank">
-      <img src="social/youtube.svg" alt="YouTube">
-    </a>
-  </div>
-</app-dashboard-card>
+  </app-dashboard-card>
+</div>

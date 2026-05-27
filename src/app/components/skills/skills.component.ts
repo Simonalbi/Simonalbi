@@ -65,10 +65,35 @@ export class SkillsComponent implements OnInit{
     const data = await Promise.all(
       skills.map(async skill => {
         const color = await this.getDominantColorFromImageUrl(skill.image);
+        
+        const r = color[0];
+        const g = color[1];
+        const b = color[2];
+
+        // Soft lighter color for the top edge
+        const rL = Math.min(255, r + 40);
+        const gL = Math.min(255, g + 40);
+        const bL = Math.min(255, b + 40);
+
+        // Slightly deeper color for the bottom edge
+        const rD = Math.max(0, r - 20);
+        const gD = Math.max(0, g - 20);
+        const bD = Math.max(0, b - 20);
+
         return {
           value: skill.level - 1,
           itemStyle: {
-            color: `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+            color: {
+              type: 'linear' as const,
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1, // Vertical gradient
+              colorStops: [
+                { offset: 0, color: `rgb(${rL}, ${gL}, ${bL})` }, // Soft light top
+                { offset: 1, color: `rgb(${rD}, ${gD}, ${bD})` }  // Solid deeper base
+              ]
+            }
           }
         };
       })
@@ -132,7 +157,10 @@ export class SkillsComponent implements OnInit{
           data: data,
           barWidth: barWidth,
           itemStyle: {
-            borderRadius: 12
+            borderRadius: 12,
+            shadowColor: 'rgba(0, 0, 0, 0.08)',
+            shadowBlur: 4,
+            shadowOffsetY: 2
           }
         },
         {

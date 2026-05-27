@@ -1,8 +1,8 @@
+/* Large (≥1280px): 3 columns, max-width contained */
 #cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(5, 0.1fr); */
-  gap: 8px;
+  gap: 16px;
 }
 
 #profile-summary {
@@ -41,33 +41,62 @@
   grid-row-start: 6;
 }
 
-@keyframes slideInDown {
-  from { opacity: 0; transform: translateY(-400px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Desktop (1024px-1279px): 3 columns */
+@media (max-width: 1279px) {
+  #cards-container {
+    gap: 12px;
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Tablet (640px-1023px): 2 columns */
+@media (max-width: 1023px) {
+  #cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  #profile-summary {
+    grid-column: span 2 / span 2;
+  }
+
+  #working-experience {
+    grid-column: span 2 / span 2;
+    grid-row: auto;
+  }
+
+  #education {
+    grid-column: span 2 / span 2;
+    grid-row: auto;
+  }
+
+  #certifications {
+    grid-column: span 2 / span 2;
+    grid-column-start: auto;
+    grid-row: auto;
+  }
+
+  #badges {
+    grid-column: span 2 / span 2;
+    grid-column-start: auto;
+    grid-row: auto;
+  }
+
+  #skills {
+    grid-column: span 2 / span 2;
+    grid-row: auto;
+  }
+
+  #hackathons {
+    grid-column: span 2 / span 2;
+    grid-row: auto;
+  }
 }
 
-.slide-in-down {
-  animation: slideInDown 0.8s ease;
-}
-
-.fade-in {
-  animation: fadeIn 0.3s ease;
-}
-
-.animatable {
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-@media (max-width: 1024px) {
+/* Mobile (<640px): single column */
+@media (max-width: 639px) {
   #cards-container {
     grid-template-columns: 1fr;
-    grid-template-rows: none;
+    gap: 12px;
   }
 
   #profile-summary,

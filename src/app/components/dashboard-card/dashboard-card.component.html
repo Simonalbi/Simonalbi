@@ -1,11 +1,11 @@
-<section class="card">
+<section class="card" [class.card-list]="type === 'list'">
   @if (banner) {
     <div class="card-banner">
       <img [src]="banner" alt="card-banner">
     </div>
   }
 
-  <div class="card-content">
+  <div class="card-content" [class.has-banner]="!!banner">
     @if (title) {
       <h2 class="card-title">{{ title }}</h2>
     }

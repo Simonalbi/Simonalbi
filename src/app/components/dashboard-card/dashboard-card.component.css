@@ -1,22 +1,23 @@
 .card {
   position: relative;
-
   height: 100%;
-
-  background-color: var(--pure-white);
-  border-radius: 10px;
-
+  background-color: #FFFFFF;
+  border-radius: 16px;
   overflow: hidden;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
-  border: 1px solid var(--platinum);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .card-banner {
-  position: absolute;
-
+  position: relative;
   width: 100%;
-  height: 100px;
+  height: 120px;
+  overflow: hidden;
 }
 
 .card-banner img {
@@ -27,32 +28,30 @@
 
 .card-title {
   margin-bottom: 20px;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0F172A;
 }
 
 .card-content {
   position: relative;
-
   width: 100%;
-  height: inherit;
+  padding: 24px;
+}
 
-  padding: 20px;
+.card-content.has-banner {
+  padding-top: 24px;
 }
 
 .card-footer {
-  position: absolute;
-  bottom: 0;
-
   width: 100%;
-  height: fit-content;
-
-  padding-right: 5px;
-  padding-bottom: 5px;
+  padding: 0 24px 16px;
 }
 
-.card-divider {
-  width: 100%;
-  height: 1px;
-  background-color: var(--chinese-white);
-
-  margin: 12px 0 12px 0;
+.card-list .card-content ::ng-deep > div > *:not(:last-child) {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #E2E8F0;
+  display: block;
 }

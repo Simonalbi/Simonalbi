@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfileSummaryComponent } from "./components/profile-summary/profile-summary.component";
 import { WorkingExperienceComponent } from "./components/working-experience/working-experience.component";
@@ -15,31 +15,35 @@ import { HackathonsComponent } from "./components/hackathons/hackathons.componen
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'Simonalbi';
 
-  @ViewChildren('step0,step1,step2,step3,step4,step5,step6') steps!: QueryList<ElementRef>;
+  @ViewChildren('section') sections!: QueryList<ElementRef>;
+
+  private observer!: IntersectionObserver;
 
   ngAfterViewInit() {
-    const classes = ['slide-in-down', 'fade-in', 'fade-in', 'fade-in', 'fade-in', 'fade-in', 'fade-in'];
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            this.observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
 
-    const elements = this.steps.toArray();
-    let index = 0;
+    this.sections.forEach((section) => {
+      this.observer.observe(section.nativeElement);
+    });
+  }
 
-    const animateNext = () => {
-      if (index >= elements.length) return;
-
-      const el = elements[index].nativeElement;
-      const cls = classes[index];
-
-      el.classList.add(cls);
-
-      el.addEventListener('animationend', () => {
-        index++;
-        animateNext();
-      }, { once: true });
-    };
-
-    animateNext();
+  ngOnDestroy() {
+    this.observer?.disconnect();
   }
 }

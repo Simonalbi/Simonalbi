@@ -1,18 +1,14 @@
-<div id="badge-container">
-  <div id="image-container">
+<div class="badge-container group" [title]="badge.name">
+  <div class="badge-image">
     <img [src]="badge.src" [alt]="badge.name">
   </div>
-  <a [href]="badge.url" target="_blank">
-    <div id="badge-url-button" class="icon-sm">
-      <h6 id="issue-date" class="sm">{{ badge.issued | date: 'MMM y'}}</h6>
-      <img src="gicons/open_in_new.svg" alt="Certification url">
-      @if (badge.verified) {
-        <a [href]="badge.verifiedCertificationEntityUrl" target="_blank">
-          <span id="verified-icon" class="icon-sm">
-            <img src="gicons/verified.svg" alt="verified">
-          </span>
-        </a>
-      }
-    </div>
+  <a [href]="badge.url" target="_blank" class="badge-link">
+    <span class="text-xs font-medium">{{ badge.issued | date: 'MMM y'}}</span>
+    <img src="gicons/open_in_new.svg" alt="Badge url" class="w-3.5 h-3.5">
+    @if (badge.verified) {
+      <a [href]="badge.verifiedCertificationEntityUrl" target="_blank" class="verified-icon">
+        <img src="gicons/verified.svg" alt="verified" class="w-4 h-4">
+      </a>
+    }
   </a>
 </div>

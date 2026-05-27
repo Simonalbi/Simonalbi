@@ -3,11 +3,11 @@
     <div class="hackathon-logo-container">
       <img [src]="hackathon.hackathonLogo" [alt]="hackathon.hackathonName">
     </div>
-    <div class="divider"></div>
+    <div class="w-px h-10 bg-border"></div>
     <div class="hackathon-info">
       <h5> {{ hackathon.hackathonName }} </h5>
-      <p class="sm"> {{ hackathon.getDuration() }} days at {{ hackathon.location }}</p>
-      <p class="sm gray-text"> {{ hackathon.start | date: 'MMM y' }}</p>
+      <p class="text-sm text-primary/80"> {{ hackathon.getDuration() }} days at {{ hackathon.location }}</p>
+      <p class="text-sm text-secondary"> {{ hackathon.start | date: 'MMM y' }}</p>
     </div>
   </div>
 
