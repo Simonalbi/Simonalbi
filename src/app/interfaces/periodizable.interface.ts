@@ -1,4 +1,4 @@
-import {differenceInYears, differenceInMonths} from 'date-fns';
+import {differenceInYears, differenceInMonths, differenceInDays} from 'date-fns';
 
 export abstract class Periodizable {
   abstract startDate: Date;
@@ -24,6 +24,14 @@ export abstract class Periodizable {
 
       period += `${months} month`;
       if (months > 1) {
+        period += "s";
+      }
+    }
+
+    if (period === "") {
+      const days = differenceInDays(endDate, this.startDate);
+      period = `${days} day`;
+      if (days !== 1) {
         period += "s";
       }
     }
