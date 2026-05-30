@@ -8,9 +8,15 @@
       "website": "https://www.accenture.com",
       "roles": [
         {
+          "name": "Custom Software Engineering Senior Analyst",
+          "start_date": "2026-06-01",
+          "end_date": null,
+          "contract_type": "Full-time"
+        },
+        {
           "name": "Custom Software Engineering Analyst",
           "start_date": "2024-07-01",
-          "end_date": null,
+          "end_date": "2026-06-01",
           "contract_type": "Full-time"
         }
       ]
