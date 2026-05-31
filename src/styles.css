@@ -21,11 +21,37 @@
   body {
     @apply font-sans text-primary relative;
     background-color: #FAFAFA;
-    background-image: radial-gradient(#CBD5E1 1px, transparent 1px); /* Dot grid pattern */
+    padding: 24px;
+    z-index: 0;
+  }
+
+  body::before, body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
     background-size: 32px 32px;
     background-position: center top;
-    padding: 24px;
     animation: grid-scroll 60s linear infinite;
+  }
+
+  body::before {
+    background-image: radial-gradient(#CBD5E1 1px, transparent 1px); /* Base dot grid pattern */
+  }
+
+  body::after {
+    background-image: radial-gradient(#94A3B8 1.5px, transparent 1.5px); /* Darker, slightly larger dots */
+    -webkit-mask-image: radial-gradient(
+      150px circle at var(--mouse-page-x, 50vw) var(--mouse-page-y, 50vh),
+      black 0%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      150px circle at var(--mouse-page-x, 50vw) var(--mouse-page-y, 50vh),
+      black 0%,
+      transparent 100%
+    );
   }
 
   @keyframes grid-scroll {
@@ -153,26 +179,6 @@
   100% {
     transform: translate(0, -10%) scale(1.1);
   }
-}
-
-/* ===== Interactive Spotlight ===== */
-.mouse-spotlight {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 1200px;
-  height: 1200px;
-  margin-top: -600px;
-  margin-left: -600px;
-  z-index: -5;
-  pointer-events: none;
-  background: radial-gradient(
-    600px circle at center,
-    rgba(148, 57, 194, 0.05),
-    transparent 40%
-  );
-  transform: translate3d(var(--mouse-x, 50vw), var(--mouse-y, 50vh), 0);
-  will-change: transform;
 }
 
 /* ===== Random Blinking Symbols ===== */

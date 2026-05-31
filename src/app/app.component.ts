@@ -36,6 +36,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
           window.requestAnimationFrame(() => {
             document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
             document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+            document.documentElement.style.setProperty('--mouse-page-x', `${event.pageX}px`);
+            document.documentElement.style.setProperty('--mouse-page-y', `${event.pageY}px`);
             ticking = false;
           });
           ticking = true;
