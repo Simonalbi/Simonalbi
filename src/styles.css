@@ -36,12 +36,14 @@
     animation: grid-scroll 60s linear infinite;
   }
 
+  /* Base dot grid pattern */
   body::before {
-    background-image: radial-gradient(#CBD5E1 1px, transparent 1px); /* Base dot grid pattern */
+    background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
   }
 
+  /* Darker, slightly larger dots, Interactive mask using mouse position */
   body::after {
-    background-image: radial-gradient(#94A3B8 1.5px, transparent 1.5px); /* Darker, slightly larger dots */
+    background-image: radial-gradient(#94A3B8 1.5px, transparent 1.5px); 
     -webkit-mask-image: radial-gradient(
       150px circle at var(--mouse-page-x, 50vw) var(--mouse-page-y, 50vh),
       black 0%,
