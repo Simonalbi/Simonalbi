@@ -7,7 +7,7 @@
     <div class="flex-1" [ngClass]="{'mb-3': company.roles.length > 1}">
       <h5 class="text-base font-semibold text-primary flex items-center gap-1.5">
         {{ company.roles.length > 1 ? company.name : company.roles[0].name }}
-        <a [href]="company.website" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
+        <a [href]="company.website" [trackLink]="'company_' + company.name" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
           <img src="gicons/open_in_new.svg" alt="Company website" class="w-4 h-4">
         </a>
       </h5>

@@ -6,7 +6,7 @@
   <div class="flex-1">
     <h5 class="text-base font-semibold text-primary flex items-center gap-1.5">
       {{ school.name }}
-      <a [href]="school.website" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
+      <a [href]="school.website" [trackLink]="'school_' + school.name" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
         <img src="gicons/open_in_new.svg" alt="School website" class="w-4 h-4">
       </a>
     </h5>

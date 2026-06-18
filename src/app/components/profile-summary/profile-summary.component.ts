@@ -1,11 +1,12 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { DashboardCardComponent } from "../dashboard-card/dashboard-card.component";
+import { TrackLinkDirective } from '../../directives/track-link.directive';
 
 @Component({
   selector: 'app-profile-summary',
   standalone: true,
-  imports: [DashboardCardComponent],
+  imports: [DashboardCardComponent, TrackLinkDirective],
   providers: [DatePipe],
   templateUrl: './profile-summary.component.html',
   styleUrl: './profile-summary.component.css'

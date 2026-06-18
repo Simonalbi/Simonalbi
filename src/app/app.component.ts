@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren, NgZone } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren, NgZone, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfileSummaryComponent } from "./components/profile-summary/profile-summary.component";
 import { WorkingExperienceComponent } from "./components/working-experience/working-experience.component";
@@ -8,6 +8,7 @@ import { BadgesComponent } from "./components/badges/badges.component";
 import { SkillsComponent } from "./components/skills/skills.component";
 import { HackathonsComponent } from "./components/hackathons/hackathons.component";
 import { CodeLoaderComponent } from './components/code-loader/code-loader.component';
+import { AnalyticsService } from './services/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'Simonalbi';
 
   private unlistenMouseMove?: () => void;
+  private analyticsService = inject(AnalyticsService);
 
   constructor(private ngZone: NgZone) {}
 
@@ -53,6 +55,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             this.observer.unobserve(entry.target);
+            // Traccia la sezione vista in Firebase Analytics
+            const sectionId = (entry.target as HTMLElement).id;
+            if (sectionId) {
+              this.analyticsService.trackSectionViewed(sectionId);
+            }
           }
         });
       },
