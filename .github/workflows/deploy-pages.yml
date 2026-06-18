@@ -5,6 +5,7 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+# This permission is essential to allow the action to push to the gh-pages branch
 permissions:
   contents: write
 
@@ -12,7 +13,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout del codice
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -21,10 +22,10 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Installa le dipendenze
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build del progetto Angular
+      - name: Build Angular project
         run: npm run build -- --base-href /Simonalbi/
 
       - name: Deploy to gh-pages branch

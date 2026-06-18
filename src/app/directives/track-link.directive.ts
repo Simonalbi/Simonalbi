@@ -2,13 +2,7 @@ import { Directive, HostListener, Input, inject } from '@angular/core';
 import { AnalyticsService } from '../services/analytics.service';
 
 /**
- * Direttiva da aggiungere a qualsiasi tag <a> per tracciare automaticamente il click in Firebase Analytics.
- * 
- * Uso con link statici:
- *   <a href="https://github.com" trackLink="github_profile" target="_blank">...</a>
- * 
- * Uso con link dinamici:
- *   <a [href]="company.website" [trackLink]="company.name" target="_blank">...</a>
+ * Directive to add to any <a> tag to automatically track clicks in Firebase Analytics.
  */
 @Directive({
   selector: 'a[trackLink]',

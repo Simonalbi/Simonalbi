@@ -11,6 +11,13 @@
       <img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
     <img src="https://img.shields.io/badge/Location-Italy-9439C2?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+    <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />
+    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
   </p>
 
   <p>
@@ -24,10 +31,11 @@
 
 ## 🚀 Currently Exploring
 
-| Topic                        | Project                            | Status      |
-| ---------------------------- | ---------------------------------- | ----------- |
-| ☁️ **Google Cloud Platform** |                                    | 🔄 Learning |
-| 🤖 **Arduino Robotics**      | Hexapod robot design & programming | 🔧 Building |
+| Topic                        | Projects                               | Status      |
+| ---------------------------- | -------------------------------------- | ----------- |
+| ☁️ **Google Cloud Platform** |                                        | 🔄 Learning |
+| 🔥 **Firebase**              | Portfolio analytics, Bar digital menu  | 🔧 Building |
+| 🤖 **Arduino Robotics**      | Hexapod robot design & programming     | 🔧 Building |
 
 <!-- TECH & SKILLS -->
 ## Technologies & Tools

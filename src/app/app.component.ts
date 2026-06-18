@@ -55,7 +55,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             this.observer.unobserve(entry.target);
-            // Traccia la sezione vista in Firebase Analytics
+            // Track the viewed section in Firebase Analytics
             const sectionId = (entry.target as HTMLElement).id;
             if (sectionId) {
               this.analyticsService.trackSectionViewed(sectionId);
