@@ -1,6 +1,38 @@
 {
   "badges": [
     {
+      "name": "Introducing APIs and API Security",
+      "src": "badges/cdd0a064-37e4-46cc-8705-38ce4d0a1846.png",
+      "url": "https://skillsoft.digitalbadges.skillsoft.com/56a00c4c-139f-487d-9735-fa6fc18b1979",
+      "issued": "2026-07-10",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.skillsoft.com"
+    },
+    {
+      "name": "CCSP 2022: Application Security Awareness & Life Cycles",
+      "src": "badges/1cf2ed50-2246-4235-aa31-6d446e50d0d9.png",
+      "url": "https://skillsoft.digitalbadges.skillsoft.com/ef3bc710-1224-4b91-aadc-6d674e2b7418",
+      "issued": "2026-07-10",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.skillsoft.com"
+    },
+    {
+      "name": "OWASP Top 10: Securing Web Applications",
+      "src": "badges/d6c74870-cbbe-4bf2-9747-cd2c337f7cc6.png",
+      "url": "https://skillsoft.digitalbadges.skillsoft.com/dc3d942b-ac1d-4754-acc2-516ec1760333",
+      "issued": "2026-07-10",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.skillsoft.com"
+    },
+    {
+      "name": "CCSP 2022: Identity & Access Management Solutions",
+      "src": "badges/2d2ccdcd-bc80-43a3-893d-ca0a7720e60c.png",
+      "url": "https://skillsoft.digitalbadges.skillsoft.com/f8564bc3-8732-4040-ae44-3d8ffe5b42ac",
+      "issued": "2026-07-08",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.skillsoft.com"
+    },
+    {
       "name": "Skill Up Summer",
       "src": "badges/24575389.png",
       "url": "https://www.skills.google/public_profiles/4fac313d-0a1f-4c49-800a-e647375c73c3/badges/24575389",
