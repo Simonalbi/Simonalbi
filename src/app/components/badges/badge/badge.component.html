@@ -4,7 +4,7 @@
   </a>
   <div class="relative">
     <a [href]="badge.url" [trackLink]="'badge_link_' + badge.name" target="_blank" class="badge-link inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-primary bg-slate-50 border border-slate-200 rounded-full hover:bg-accent hover:text-white hover:border-accent transition-all duration-200">
-      <span>{{ badge.issued | date: 'MMM y'}}</span>
+      <span class="badge-date">{{ badge.issued | date: 'MMM y'}}</span>
       <img src="gicons/open_in_new.svg" alt="Badge url" class="w-3.5 h-3.5">
     </a>
     @if (badge.verified) {

@@ -28,3 +28,7 @@
 .badge-link:hover img {
   filter: brightness(0) invert(1);
 }
+
+.badge-date {
+  white-space: nowrap;
+}
