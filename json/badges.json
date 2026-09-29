@@ -1,6 +1,14 @@
 {
   "badges": [
     {
+      "name": "AI Fundamentals",
+      "src": "badges/30d9c076-a0df-4131-a54f-563cd8cd1a16.png",
+      "url": "https://www.credly.com/badges/30d9c076-a0df-4131-a54f-563cd8cd1a16",
+      "issued": "2026-09-29",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.credly.com/organizations/coursera/badges"
+    },
+    {
       "name": "Introducing APIs and API Security",
       "src": "badges/cdd0a064-37e4-46cc-8705-38ce4d0a1846.png",
       "url": "https://skillsoft.digitalbadges.skillsoft.com/56a00c4c-139f-487d-9735-fa6fc18b1979",
