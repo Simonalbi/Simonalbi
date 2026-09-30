@@ -1,7 +1,15 @@
 {
   "badges": [
     {
-      "name": "AI Fundamentals",
+      "name": "Google AI for Brainstorming and Planning",
+      "src": "badges/fc0c3c39-82dd-4244-8e19-e59a192e110c.png",
+      "url": "https://www.credly.com/badges/fc0c3c39-82dd-4244-8e19-e59a192e110c",
+      "issued": "2026-09-30",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.credly.com/organizations/coursera/badges"
+    },
+    {
+      "name": "Google AI Fundamentals",
       "src": "badges/30d9c076-a0df-4131-a54f-563cd8cd1a16.png",
       "url": "https://www.credly.com/badges/30d9c076-a0df-4131-a54f-563cd8cd1a16",
       "issued": "2026-09-29",
