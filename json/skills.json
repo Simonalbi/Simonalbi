@@ -3,112 +3,122 @@
     {
       "name": "Java",
       "image": "skills/java-original.svg",
-      "level": 7
+      "level": 7,
+      "category": "Backend"
     },
     {
       "name": "Python",
       "image": "skills/python-original.svg",
-      "level": 8
+      "level": 8,
+      "category": "Backend"
     },
     {
       "name": "C",
       "image": "skills/c-original.svg",
-      "level": 4
-    },
-    {
-      "name": "C#",
-      "image": "skills/csharp-original.svg",
-      "level": 2
+      "level": 4,
+      "category": "Backend"
     },
     {
       "name": "HTML",
       "image": "skills/html5-original.svg",
-      "level": 7
+      "level": 7,
+      "category": "Frontend"
     },
     {
       "name": "CSS",
       "image": "skills/css3-original.svg",
-      "level": 6
+      "level": 6,
+      "category": "Frontend"
     },
     {
       "name": "JavaScript",
       "image": "skills/javascript-original.svg",
-      "level": 7
+      "level": 7,
+      "category": "Frontend"
     },
     {
       "name": "TypeScript",
       "image": "skills/typescript-original.svg",
-      "level": 6
-    },
-    {
-      "name": "MySQL",
-      "image": "skills/mysql-original.svg",
-      "level": 7
-    },
-    {
-      "name": "SQLite",
-      "image": "skills/sqlite-original.svg",
-      "level": 8
-    },
-    {
-      "name": "Neo4j",
-      "image": "skills/neo4j-original.svg",
-      "level": 5
-    },
-    {
-      "name": "Git",
-      "image": "skills/git-original.svg",
-      "level": 7
-    },
-    {
-      "name": "gRPC",
-      "image": "skills/grpc-original.svg",
-      "level": 5
-    },
-    {
-      "name": "Spring",
-      "image": "skills/spring-original.svg",
-      "level": 3
-    },
-    {
-      "name": "Android SDK",
-      "image": "skills/androidstudio-original.svg",
-      "level": 5
+      "level": 6,
+      "category": "Frontend"
     },
     {
       "name": "Angular",
       "image": "skills/angular-original.svg",
-      "level": 6
+      "level": 6,
+      "category": "Frontend"
     },
     {
-      "name": "Cucumber",
-      "image": "skills/cucumber-original.svg",
-      "level": 4
+      "name": "MySQL",
+      "image": "skills/mysql-original.svg",
+      "level": 7,
+      "category": "Database"
     },
     {
-      "name": "Selenium WebDriver",
-      "image": "skills/selenium-original.svg",
-      "level": 5
+      "name": "SQLite",
+      "image": "skills/sqlite-original.svg",
+      "level": 8,
+      "category": "Database"
     },
     {
-      "name": "Grafana",
-      "image": "skills/grafana-original.svg",
-      "level": 4
+      "name": "Neo4j",
+      "image": "skills/neo4j-original.svg",
+      "level": 5,
+      "category": "Database"
+    },
+    {
+      "name": "Git",
+      "image": "skills/git-original.svg",
+      "level": 7,
+      "category": "DevOps"
     },
     {
       "name": "GitHub",
       "image": "skills/github-original.svg",
-      "level": 7
+      "level": 7,
+      "category": "DevOps"
     },
     {
       "name": "GitLab",
       "image": "skills/gitlab-original.svg",
-      "level": 6
+      "level": 6,
+      "category": "DevOps"
     },
     {
-      "name": "Arduino",
-      "image": "skills/arduino-original.svg",
-      "level": 2
+      "name": "Grafana",
+      "image": "skills/grafana-original.svg",
+      "level": 4,
+      "category": "DevOps"
+    },
+    {
+      "name": "gRPC",
+      "image": "skills/grpc-original.svg",
+      "level": 5,
+      "category": "Backend"
+    },
+    {
+      "name": "Spring",
+      "image": "skills/spring-original.svg",
+      "level": 3,
+      "category": "Backend"
+    },
+    {
+      "name": "Android SDK",
+      "image": "skills/androidstudio-original.svg",
+      "level": 5,
+      "category": "Mobile"
+    },
+    {
+      "name": "Cucumber",
+      "image": "skills/cucumber-original.svg",
+      "level": 4,
+      "category": "Testing"
+    },
+    {
+      "name": "Selenium WebDriver",
+      "image": "skills/selenium-original.svg",
+      "level": 5,
+      "category": "Testing"
     }
   ]
-}
+}

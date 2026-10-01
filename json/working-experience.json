@@ -11,13 +11,26 @@
           "name": "Custom Software Engineering Sr Analyst",
           "start_date": "2026-06-01",
           "end_date": null,
-          "contract_type": "Full-time"
+          "contract_type": "Full-time",
+          "areas": []
         },
         {
           "name": "Custom Software Engineering Analyst",
           "start_date": "2024-07-01",
           "end_date": "2026-06-01",
-          "contract_type": "Full-time"
+          "contract_type": "Full-time",
+          "areas": [
+            {
+              "title": "Cloud Software Engineer | Oracle ERP",
+              "description": "Cloud Software Engineer focused on Oracle ERP solutions within Oracle Cloud (SaaS/PaaS), delivering enterprise applications in Oracle Visual Builder Studio and integrating RESTful services across Project, Finance, and Procurement modules.",
+              "technologies": ["Oracle Cloud", "Oracle VB Studio", "JavaScript", "REST APIs"]
+            },
+            {
+              "title": "Test Automation",
+              "description": "Developed automated end-to-end tests in Java using Cucumber, Gherkin, and Selenium following BDD principles.",
+              "technologies": ["Java", "Cucumber", "Selenium", "BDD"]
+            }
+          ]
         }
       ]
     },
@@ -32,7 +45,14 @@
           "name": "Freelance Software Developer",
           "start_date": "2020-08-01",
           "end_date": null,
-          "contract_type": "Freelance"
+          "contract_type": "Freelance",
+          "areas": [
+            {
+              "title": "Telegram Chatbot Development",
+              "description": "Registered as a freelance developer on Fiverr, providing international software development of custom Telegram chatbots.",
+              "technologies": ["Python", "Telegram Bot API"]
+            }
+          ]
         }
       ]
     },
@@ -47,13 +67,36 @@
           "name": "Software Engineer",
           "start_date": "2023-06-01",
           "end_date": "2024-06-01",
-          "contract_type": "Full-time"
+          "contract_type": "Full-time",
+          "areas": [
+            {
+              "title": "Analysis, Design & Development",
+              "description": "End-to-end involvement in custom software solutions, from requirements analysis and system design to development, optimization, and maintenance.",
+              "technologies": []
+            },
+            {
+              "title": "Windows Desktop Application",
+              "description": "Contributed to the development and maintenance of a C# client-server desktop application for managing and analyzing large, heterogeneous datasets, featuring advanced tools for data processing and visualization.",
+              "technologies": ["C#", ".NET"]
+            },
+            {
+              "title": "Artificial Intelligence R&D",
+              "description": "Researched, trained, and integrated AI models using Java, Python, gRPC, MySQL, and CUDA, with a focus on optimizing communication between different models and ensuring scalable data analysis.",
+              "technologies": ["Java", "Python", "gRPC", "MySQL", "CUDA"]
+            },
+            {
+              "title": "Infrastructure Monitoring Systems",
+              "description": "Designed and implemented adaptive web-based monitoring tools using Python, Grafana, and MySQL to track distributed infrastructures, providing real-time visibility on system status and performance.",
+              "technologies": ["Python", "Grafana", "MySQL"]
+            }
+          ]
         },
         {
           "name": "Apprentice Java Software Developer",
           "start_date": "2023-02-01",
           "end_date": "2023-06-01",
-          "contract_type": "Apprenticeship"
+          "contract_type": "Apprenticeship",
+          "areas": []
         }
       ]
     }

@@ -1,6 +1,30 @@
 {
   "badges": [
     {
+      "name": "Google AI for App Building",
+      "src": "badges/1c880a89-7d5a-44a2-b625-7f2a10dc7985.png",
+      "url": "https://www.credly.com/badges/1c880a89-7d5a-44a2-b625-7f2a10dc7985",
+      "issued": "2026-10-01",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.credly.com/organizations/coursera/badges"
+    },
+    {
+      "name": "Google AI for Data Analysis",
+      "src": "badges/08c6038c-128f-4551-9a82-f76bd43f1b50.png",
+      "url": "https://www.credly.com/badges/08c6038c-128f-4551-9a82-f76bd43f1b50",
+      "issued": "2026-10-01",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.credly.com/organizations/coursera/badges"
+    },
+    {
+      "name": "Google AI for Content Creation",
+      "src": "badges/a2df3730-1b76-4dc3-b00a-af0781d75683.png",
+      "url": "https://www.credly.com/badges/a2df3730-1b76-4dc3-b00a-af0781d75683",
+      "issued": "2026-10-01",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.credly.com/organizations/coursera/badges"
+    },
+    {
       "name": "Google AI for Writing and Communicating",
       "src": "badges/e9b16b48-a4b9-49cd-993f-81e1e389fb43.png",
       "url": "https://www.credly.com/badges/e9b16b48-a4b9-49cd-993f-81e1e389fb43",
