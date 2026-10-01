@@ -1,42 +1,132 @@
 <div class="experience-info-container">
-  <div class="flex items-start gap-3">
-    <div class="logo-container">
-      <img [src]="company.logo">
-    </div>
+  @if (company.roles.length === 1) {
+    <!-- Single-role company (e.g. Fiverr) -->
+    <div class="flex items-start gap-3 mb-1">
+      <div class="logo-container">
+        <img [src]="company.logo" [alt]="company.name">
+      </div>
+      <div class="flex-1 min-w-0">
+        <!-- Role title is directly clickable to expand/collapse if it has areas -->
+        @if (company.roles[0].areas.length > 0) {
+          <button class="role-title-btn" (click)="toggleRole(0)" [attr.aria-expanded]="isExpanded(0)">
+            <span class="role-name">{{ company.roles[0].name }}</span>
+            <img [src]="isExpanded(0) ? 'gicons/expand_less.svg' : 'gicons/expand_more.svg'"
+                 alt="" class="w-4 h-4 chevron-icon" aria-hidden="true">
+          </button>
+        } @else {
+          <h5 class="role-name text-base font-semibold text-primary">{{ company.roles[0].name }}</h5>
+        }
 
-    <div class="flex-1" [ngClass]="{'mb-3': company.roles.length > 1}">
-      <h5 class="text-base font-semibold text-primary flex items-center gap-1.5">
-        {{ company.roles.length > 1 ? company.name : company.roles[0].name }}
-        <a [href]="company.website" [trackLink]="'company_' + company.name" target="_blank" class="inline-flex hover:opacity-70 transition-opacity">
-          <img src="gicons/open_in_new.svg" alt="Company website" class="w-4 h-4">
-        </a>
-      </h5>
-      @if (company.roles.length === 1) {
-        <p class="text-sm text-primary/80 mt-0.5">{{ company.name }} · {{ company.workMode }}</p>
-        <p class="text-sm text-secondary mt-0.5">{{ company.absoluteStartDate | date: 'MMM y'}} - {{ (company.absoluteEndDate  | date: 'MMM y') ?? "Current"}} · {{ company.periodString }}</p>
-        <p class="text-sm text-secondary">{{ company.location }} · {{ company.roles[0].contractType }}</p>
-      } @else {
+        <div class="flex items-center gap-1.5 mt-0.5">
+          <span class="text-sm font-medium text-primary/80">{{ company.name }}</span>
+          <span class="text-sm text-secondary">·</span>
+          <span class="text-sm text-secondary">{{ company.workMode }}</span>
+          <a [href]="company.website" [trackLink]="'company_' + company.name" target="_blank"
+             class="inline-flex text-secondary hover:text-accent transition-colors ml-0.5">
+            <img src="gicons/open_in_new.svg" alt="Company website" class="w-3.5 h-3.5">
+          </a>
+        </div>
+
+        <p class="text-sm text-secondary mt-0.5">
+          {{ company.absoluteStartDate | date: 'MMM y'}} - {{ (company.absoluteEndDate | date: 'MMM y') ?? "Current"}} · {{ company.periodString }}
+        </p>
+        <p class="text-sm text-secondary">
+          {{ company.location }} · {{ company.roles[0].contractType }}
+        </p>
+
+        <!-- Inline expandable areas directly under role info -->
+        @if (company.roles[0].areas.length > 0) {
+          <div class="role-areas-panel" [class.expanded]="isExpanded(0)">
+            <div class="areas-container">
+              @for (area of company.roles[0].areas; track $index) {
+                <div class="area-item">
+                  <div class="area-header">
+                    <h6 class="text-sm font-semibold text-primary">{{ area.title }}</h6>
+                  </div>
+                  <p class="area-description">{{ area.description }}</p>
+                  @if (area.technologies.length > 0) {
+                    <div class="tech-chips">
+                      @for (tech of area.technologies; track $index) {
+                        <span class="tech-chip">{{ tech }}</span>
+                      }
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  } @else {
+    <!-- Multi-role company (e.g. Accenture, Asigint) -->
+    <div class="flex items-start gap-3 mb-2">
+      <div class="logo-container">
+        <img [src]="company.logo" [alt]="company.name">
+      </div>
+      <div class="flex-1 min-w-0">
+        <h5 class="text-base font-semibold text-primary flex items-center gap-1.5">
+          {{ company.name }}
+          <a [href]="company.website" [trackLink]="'company_' + company.name" target="_blank"
+             class="inline-flex text-secondary hover:text-accent transition-colors">
+            <img src="gicons/open_in_new.svg" alt="Company website" class="w-3.5 h-3.5">
+          </a>
+        </h5>
         <p class="text-sm text-primary/80 mt-0.5">{{ company.periodString }}</p>
         <p class="text-sm text-secondary">{{ company.location }} · {{ company.workMode }}</p>
+      </div>
+    </div>
+
+    <!-- Timeline of roles -->
+    <div class="roles-list">
+      @for (role of company.roles; track $index) {
+        <div class="flex gap-3">
+          <div class="company-timeline-container">
+            <div class="company-timeline-node"></div>
+            @if ($index !== company.roles.length - 1) {
+              <div class="company-timeline-line"></div>
+            }
+          </div>
+          <div class="flex-1 pb-3 min-w-0">
+            <!-- Clickable role title -->
+            @if (role.areas.length > 0) {
+              <button class="role-title-btn" (click)="toggleRole($index)" [attr.aria-expanded]="isExpanded($index)">
+                <span class="role-name">{{ role.name }}</span>
+                <img [src]="isExpanded($index) ? 'gicons/expand_less.svg' : 'gicons/expand_more.svg'"
+                     alt="" class="w-4 h-4 chevron-icon" aria-hidden="true">
+              </button>
+            } @else {
+              <h6 class="role-name text-sm font-semibold text-primary">{{ role.name }}</h6>
+            }
+
+            <p class="text-sm text-primary/80">{{ role.contractType }}</p>
+            <p class="text-sm text-secondary">{{ role.startDate | date: 'MMM y'}} - {{ (role.endDate | date: 'MMM y') ?? "Current"}} · {{ role.periodString }}</p>
+
+            <!-- Inline expandable areas directly under this role -->
+            @if (role.areas.length > 0) {
+              <div class="role-areas-panel" [class.expanded]="isExpanded($index)">
+                <div class="areas-container">
+                  @for (area of role.areas; track $index) {
+                    <div class="area-item">
+                      <div class="area-header">
+                        <h6 class="text-sm font-semibold text-primary">{{ area.title }}</h6>
+                      </div>
+                      <p class="area-description">{{ area.description }}</p>
+                      @if (area.technologies.length > 0) {
+                        <div class="tech-chips">
+                          @for (tech of area.technologies; track $index) {
+                            <span class="tech-chip">{{ tech }}</span>
+                          }
+                        </div>
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
       }
     </div>
-  </div>
-
-  @if (company.roles.length > 1) {
-    @for (role of company.roles; track $index) {
-      <div class="flex gap-3">
-        <div class="company-timeline-container">
-          <div class="company-timeline-node"></div>
-          @if ($index !== company.roles.length - 1) {
-            <div class="company-timeline-line"></div>
-          }
-        </div>
-        <div class="pb-6">
-          <h6 class="text-sm font-semibold text-primary">{{ role.name }}</h6>
-          <p class="text-sm text-primary/80">{{ role.contractType }}</p>
-          <p class="text-sm text-secondary">{{ role.startDate | date: 'MMM y'}} - {{ (role.endDate| date: 'MMM y') ?? "Current"}} · {{ role.periodString }}</p>
-        </div>
-      </div>
-    }
   }
 </div>

@@ -1,0 +1,13 @@
+{
+  "projects": [
+    {
+      "name": "QASM-MLIR Compiler",
+      "description": "A C++ quantum compiler and optimizer built on MLIR. It processes OpenQASM 2.0 (.qasm) files, applies targeted circuit optimizations, and outputs optimized QASM for simulation and validation in Qiskit.",
+      "url": "https://github.com/Simonalbi/qasm-mlir-compiler",
+      "stars": 2,
+      "language": "C++",
+      "topics": ["compiler-design", "cpp", "llvm", "mlir", "openqasm", "quantum-computing", "qiskit"],
+      "updated_at": "2026-09-11"
+    }
+  ]
+}

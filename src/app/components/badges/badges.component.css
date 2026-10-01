@@ -1,16 +1,92 @@
-#badges-grid {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
+/* ---- Wrapper: clips to exactly one row when not expanded ---- */
+.badges-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#badges-grid .badge-item {
-  flex: 1 0 100px;
-  max-width: 150px;
+.badges-wrapper:not(.expanded) {
+  max-height: 168px; /* exactly one row of larger badges */
+}
+
+.badges-wrapper.expanded {
+  max-height: 1500px;
+}
+
+/* ---- Badges Grid: at most 4 badges per row, responsive to screen size ---- */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 16px;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 2px;
+}
+
+@media (max-width: 640px) {
+  .badges-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 10px;
+  }
+
+  .badges-wrapper:not(.expanded) {
+    max-height: 145px;
+  }
+}
+
+@media (max-width: 380px) {
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 8px;
+  }
+
+  .badges-wrapper:not(.expanded) {
+    max-height: 140px;
+  }
+}
+
+.badge-item {
+  width: 100%;
+  max-width: 140px;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ---- Toggle button ---- */
+#badges-toggle-btn {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #64748B;
+  background: transparent;
+  border: 1px solid #E2E8F0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#badges-toggle-btn:hover {
+  background-color: rgba(148, 57, 194, 0.05);
+  border-color: rgba(148, 57, 194, 0.3);
+  color: theme('colors.accent.DEFAULT');
+}
+
+#badges-toggle-btn img {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+#badges-toggle-btn:hover img {
+  opacity: 1;
+  filter: invert(24%) sepia(87%) saturate(1200%) hue-rotate(262deg) brightness(80%) contrast(95%);
 }

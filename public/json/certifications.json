@@ -6,7 +6,8 @@
       "logo": "certifications/cucumber.svg",
       "date": "2025-05-21",
       "id": "t14gw4gsrn",
-      "url": "https://school.cucumber.io/certificates/t14gw4gsrn"
+      "url": "https://school.cucumber.io/certificates/t14gw4gsrn",
+      "type": "certification"
     },
     {
       "name": "Neo4j Certified Professional",
@@ -14,7 +15,8 @@
       "logo": "certifications/neo4j.svg",
       "date": "2023-12-04",
       "id": "bacecb7b-b2bc-4b31-a717-bb27e5879e60",
-      "url": "https://graphacademy.neo4j.com/c/bacecb7b-b2bc-4b31-a717-bb27e5879e60/"
+      "url": "https://graphacademy.neo4j.com/c/bacecb7b-b2bc-4b31-a717-bb27e5879e60/",
+      "type": "certification"
     },
     {
       "name": "Angular",
@@ -22,7 +24,8 @@
       "logo": "certifications/udemy.svg",
       "date": "2025-06-07",
       "id": "UC-3029c335-7489-497b-a325-cbab98d6db5c",
-      "url": "https://www.ude.my/UC-3029c335-7489-497b-a325-cbab98d6db5c/"
+      "url": "https://www.ude.my/UC-3029c335-7489-497b-a325-cbab98d6db5c/",
+      "type": "course"
     }
   ]
-}
+}

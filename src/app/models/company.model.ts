@@ -1,5 +1,6 @@
 import { Periodizable } from "../interfaces/periodizable.interface";
 import { Role } from "./role.model";
+import { WorkArea } from "./work-area.model";
 
 export class Company extends Periodizable {
   readonly name: string;
@@ -8,10 +9,11 @@ export class Company extends Periodizable {
   readonly workMode: string;
   readonly website: string;
   readonly roles: Array<Role>;
+  readonly areas: Array<WorkArea>;
   override startDate: Date;
   override endDate?: Date;
 
-  constructor(name: string, logo: string, location: string, workMode: string, website: string, roles: Array<Role>) {
+  constructor(name: string, logo: string, location: string, workMode: string, website: string, roles: Array<Role>, areas: Array<WorkArea> = []) {
     super();
     this.name = name;
     this.logo = logo;
@@ -21,6 +23,8 @@ export class Company extends Periodizable {
 
     this.roles = roles;
     this.roles.sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
+
+    this.areas = areas;
 
     this.startDate = this.roles[this.roles.length - 1].startDate;
     this.endDate = this.roles[0].endDate;
@@ -33,4 +37,4 @@ export class Company extends Periodizable {
   get absoluteEndDate(): Date | null {
     return this.roles[0].endDate ?? null;
   }
-}
+}

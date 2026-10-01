@@ -1,3 +1,20 @@
 <app-dashboard-card title="Tech Stack">
-  <div card-content echarts [options]="chartOptions" id="skills-chart"></div>
+  <div card-content>
+    <!-- Category pills for obvious visual grouping and filtering -->
+    <div class="skills-categories-bar">
+      @for (cat of categories; track cat) {
+        <button
+          type="button"
+          class="skill-cat-btn"
+          [class.active]="selectedCategory === cat"
+          (click)="selectCategory(cat)">
+          {{ cat }}
+          <span class="cat-count">({{ getCategoryCount(cat) }})</span>
+        </button>
+      }
+    </div>
+
+    <!-- ECharts Container with Dynamic Height -->
+    <div echarts [options]="chartOptions" id="skills-chart" [style.height]="chartHeight"></div>
+  </div>
 </app-dashboard-card>

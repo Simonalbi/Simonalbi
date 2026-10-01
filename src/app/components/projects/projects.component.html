@@ -1,0 +1,47 @@
+<app-dashboard-card title="Projects" type="list">
+  <div card-content>
+    @for (project of projectsService.projects; track $index) {
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title-row">
+            <img src="gicons/code.svg" alt="project" class="project-icon w-5 h-5">
+            <h5 class="text-base font-semibold text-primary">{{ project.name }}</h5>
+          </div>
+          <a [href]="project.url" [trackLink]="'project_' + project.name" target="_blank"
+            class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-primary bg-slate-50 border border-slate-200 rounded-full hover:bg-accent hover:text-white hover:border-accent transition-all duration-200 shrink-0">
+            View on GitHub
+            <img src="gicons/open_in_new.svg" alt="" class="w-3.5 h-3.5" aria-hidden="true">
+          </a>
+        </div>
+
+        <p class="project-description text-sm text-primary/80 leading-relaxed mt-2">{{ project.description }}</p>
+
+        <div class="project-meta mt-3">
+          @if (project.language) {
+            <span class="project-lang">
+              <span class="lang-dot"></span>
+              {{ project.language }}
+            </span>
+          }
+          @if (project.stars > 0) {
+            <span class="project-stat">
+              <img src="gicons/star.svg" alt="stars" class="w-3.5 h-3.5">
+              {{ project.stars }}
+            </span>
+          }
+          <span class="project-stat text-secondary">
+            Updated {{ project.updatedAt | date: 'MMM y' }}
+          </span>
+        </div>
+
+        @if (project.topics.length > 0) {
+          <div class="project-topics mt-2">
+            @for (topic of project.topics; track $index) {
+              <span class="topic-chip">{{ topic }}</span>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+</app-dashboard-card>

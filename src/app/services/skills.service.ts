@@ -10,19 +10,14 @@ export class SkillsService {
   private skills: Array<Skill>;
 
   constructor() {
-    const skills = new Array<Skill>();
-
-    SKILLS.skills.forEach((skill) => {
-      skills.push(
-        new Skill(
-          skill.name,
-          skill.image,
-          skill.level
-        )
+    this.skills = SKILLS.skills.map((skill) =>
+      new Skill(
+        skill.name,
+        skill.image,
+        skill.level,
+        skill.category || 'Other'
       )
-    });
-
-    this.skills = skills;
+    );
   }
 
   get skillsList(): Array<Skill> {

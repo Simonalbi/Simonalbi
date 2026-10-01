@@ -1,9 +1,19 @@
 <app-dashboard-card title="Badges">
   <div card-content>
-    <div id="badges-grid">
-      @for (badge of badgesService.badges; track $index) {
-        <app-badge [badge]="badge" class="badge-item"></app-badge>
-      }
+    <!-- Single grid wrapped in a container that clips to exactly 1 row when collapsed -->
+    <div class="badges-wrapper" [class.expanded]="isExpanded">
+      <div class="badges-grid">
+        @for (badge of badgesService.badges; track badge.name) {
+          <app-badge [badge]="badge" class="badge-item"></app-badge>
+        }
+      </div>
     </div>
+
+    @if (badgesService.badges.length > 0) {
+      <button id="badges-toggle-btn" (click)="toggleExpanded()" [attr.aria-expanded]="isExpanded">
+        <img [src]="isExpanded ? 'gicons/expand_less.svg' : 'gicons/expand_more.svg'" alt="" class="w-4 h-4" aria-hidden="true">
+        <span>{{ isExpanded ? 'Show less' : 'Show all ' + badgesService.badges.length + ' badges' }}</span>
+      </button>
+    }
   </div>
 </app-dashboard-card>

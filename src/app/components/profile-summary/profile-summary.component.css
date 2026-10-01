@@ -52,10 +52,26 @@
   transform: translateY(0);
 }
 
+#social-container {
+  display: flex;
+}
+
+#mobile-social-card {
+  display: none !important;
+}
+
 @media (max-width: 639px) {
   #avatar-container {
     width: 80px;
     height: 80px;
+  }
+
+  #social-container {
+    display: none !important;
+  }
+
+  #mobile-social-card {
+    display: block !important;
   }
 }
 

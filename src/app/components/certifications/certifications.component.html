@@ -1,9 +1,7 @@
 <app-dashboard-card title="Certifications" type="list">
   <div card-content>
-    @for (certification of certificationsService.certifications; track $index) {
-      <app-certification
-        [certification]="certification">
-      </app-certification>
+    @for (certification of certificationsService.realCertifications; track $index) {
+      <app-certification [certification]="certification"></app-certification>
     }
   </div>
 </app-dashboard-card>

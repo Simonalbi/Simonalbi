@@ -1,0 +1,7 @@
+<app-dashboard-card title="Courses" type="list">
+  <div card-content>
+    @for (course of certificationsService.courses; track $index) {
+      <app-certification [certification]="course"></app-certification>
+    }
+  </div>
+</app-dashboard-card>

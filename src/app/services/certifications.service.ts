@@ -9,6 +9,14 @@ import * as CERTIFICATIONS from '../../../public/json/certifications.json';
 export class CertificationsService {
   public readonly certifications: Array<Certification>;
 
+  get realCertifications(): Array<Certification> {
+    return this.certifications.filter(c => c.type === 'certification');
+  }
+
+  get courses(): Array<Certification> {
+    return this.certifications.filter(c => c.type === 'course');
+  }
+
   constructor() {
     this.certifications = CERTIFICATIONS.certifications.map((certification) => (new Certification(
       certification.name,
@@ -16,7 +24,8 @@ export class CertificationsService {
       certification.logo,
       new Date(certification.date),
       certification.id,
-      certification.url
+      certification.url,
+      (certification as any).type ?? 'certification'
     )));
   }
 }
