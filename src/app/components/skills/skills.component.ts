@@ -106,20 +106,19 @@ export class SkillsComponent implements OnInit {
 
     let symbolSize: number;
     if (screenWidth >= 1200) {
-      symbolSize = 32;
+      symbolSize = 22;
     } else if (screenWidth >= 768) {
-      symbolSize = 24;
+      symbolSize = 20;
     } else {
-      symbolSize = 18;
+      symbolSize = 16;
     }
 
     const barWidth = Math.max(8, symbolSize / 3);
     const labelsRotation = isMobile ? -60 : 0;
 
-    // Adjust chart height dynamically based on count
     // Adjust chart height dynamically based on count and spacers
     if (this.selectedCategory === 'All') {
-      this.chartHeight = isMobile ? '700px' : '700px';
+      this.chartHeight = isMobile ? '760px' : '820px';
     } else {
       this.chartHeight = `${Math.max(240, filtered.length * (isMobile ? 48 : 52) + (isMobile ? 90 : 70))}px`;
     }

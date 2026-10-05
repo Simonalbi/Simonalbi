@@ -18,14 +18,16 @@ export class CertificationsService {
   }
 
   constructor() {
-    this.certifications = CERTIFICATIONS.certifications.map((certification) => (new Certification(
-      certification.name,
-      certification.organization,
-      certification.logo,
-      new Date(certification.date),
-      certification.id,
-      certification.url,
-      (certification as any).type ?? 'certification'
-    )));
+    this.certifications = CERTIFICATIONS.certifications
+      .map((certification) => (new Certification(
+        certification.name,
+        certification.organization,
+        certification.logo,
+        new Date(certification.date),
+        certification.id,
+        certification.url,
+        (certification as any).type ?? 'certification'
+      )))
+      .sort((a, b) => b.date.getTime() - a.date.getTime());
   }
 }
