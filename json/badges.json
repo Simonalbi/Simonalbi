@@ -1,6 +1,14 @@
 {
   "badges": [
     {
+      "name": "Google AI for App Deployment",
+      "src": "badges/d2b2c3ba-a7f2-48f2-81a5-d57727b0d6a1.png",
+      "url": "https://www.credly.com/badges/d2b2c3ba-a7f2-48f2-81a5-d57727b0d6a1",
+      "issued": "2026-10-05",
+      "verified": true,
+      "verifiedCertificationEntityUrl": "https://www.credly.com/organizations/coursera/badges"
+    },
+    {
       "name": "Google AI for App Building",
       "src": "badges/1c880a89-7d5a-44a2-b625-7f2a10dc7985.png",
       "url": "https://www.credly.com/badges/1c880a89-7d5a-44a2-b625-7f2a10dc7985",

@@ -7,7 +7,7 @@
       "date": "2025-05-21",
       "id": "t14gw4gsrn",
       "url": "https://school.cucumber.io/certificates/t14gw4gsrn",
-      "type": "certification"
+      "type": "course"
     },
     {
       "name": "Neo4j Certified Professional",
@@ -26,6 +26,15 @@
       "id": "UC-3029c335-7489-497b-a325-cbab98d6db5c",
       "url": "https://www.ude.my/UC-3029c335-7489-497b-a325-cbab98d6db5c/",
       "type": "course"
+    },
+    {
+      "name": "Google AI Professional Certificate",
+      "organization": "Google",
+      "logo": "certifications/google.png",
+      "date": "2025-10-05",
+      "id": "3IQ27B8XV7HE",
+      "url": "https://www.coursera.org/account/accomplishments/professional-cert/3IQ27B8XV7HE",
+      "type": "certification"
     }
   ]
-}
+}
